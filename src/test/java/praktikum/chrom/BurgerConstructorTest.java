@@ -1,6 +1,8 @@
 package praktikum.chrom;
 
+import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +19,12 @@ public class BurgerConstructorTest {
     @Before
     public void setUp()  {
         open(AppConfig.URL_MAIN);
+    }
+
+    @After
+    public void tearDown() {
+        WebDriverRunner.clearBrowserCache();
+        WebDriverRunner.closeWebDriver();
     }
 
     @Test

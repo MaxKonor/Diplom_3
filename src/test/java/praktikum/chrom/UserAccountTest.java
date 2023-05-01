@@ -21,6 +21,7 @@ public class UserAccountTest {
     UserAccount userAccount = page(UserAccount.class);
     LoginPage loginPage = page(LoginPage.class);
     HeaderPage header = page(HeaderPage.class);
+    User validUserData;
     RandomGenerator random = new RandomGenerator();
     User user = new User(random.String(), random.Email(), random.String());
 
@@ -32,9 +33,11 @@ public class UserAccountTest {
         user.LogInUser();
         header.clickToAccountButton();
     }
-
     @After
     public void tearDown() {
+        if (validUserData != null) {
+            validUserData.deleteUserUsingAPI();
+        }
         WebDriverRunner.clearBrowserCache();
         WebDriverRunner.closeWebDriver();
     }

@@ -1,12 +1,16 @@
 package praktikum.user_data;
 
 import io.qameta.allure.Step;
+import io.restassured.response.ValidatableResponse;
+import praktikum.config.AppConfig;
 import praktikum.pages.LoginPage;
 import praktikum.pages.RegisterPage;
 
 import static com.codeborne.selenide.Selenide.page;
+import static io.restassured.RestAssured.given;
+import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 
-public class User {
+public class User extends AppConfig {
 
     LoginPage loginPage = page(LoginPage.class);
     RegisterPage registerPage = page(RegisterPage.class);
@@ -38,4 +42,31 @@ public class User {
         loginPage.clickToLoginButton();
 
     }
+
+    @Step("Получить токен пользователя с помощью API")
+    public String getUserTokenUsingAPI() {
+        String accessToken = "";
+        ValidatableResponse response = given()
+                .spec(getRequestSpec())
+                .body(this)
+                .when()
+                .post(AUTHORISATION_PATH + "login")
+                .then();
+        if (response.extract().statusCode() == SC_OK) {
+            accessToken = response.extract().path("accessToken");
+        }
+        return accessToken;
+    }
+
+    @Step("Удалить пользователя с помощью API")
+    public void deleteUserUsingAPI() {
+        String token = getUserTokenUsingAPI();
+        given()
+                .spec(getRequestSpec())
+                .header("authorization", token)
+                .when()
+                .delete(AUTHORISATION_PATH + "user")
+                .then();
+    }
+
 }

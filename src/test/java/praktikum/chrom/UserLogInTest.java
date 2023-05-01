@@ -21,6 +21,7 @@ public class UserLogInTest {
     LoginPage loginPage = page(LoginPage.class);
     RegisterPage registerPage = page(RegisterPage.class);
     ForgotPasswordPage forgotPasswordPage = page(ForgotPasswordPage.class);
+    User validUserData;
 
     RandomGenerator random = new RandomGenerator();
     User user = new User(random.String(), random.Email(), random.String());
@@ -33,6 +34,9 @@ public class UserLogInTest {
 
     @After
     public void tearDown() {
+        if (validUserData != null) {
+            validUserData.deleteUserUsingAPI();
+        }
         WebDriverRunner.clearBrowserCache();
         WebDriverRunner.closeWebDriver();
     }

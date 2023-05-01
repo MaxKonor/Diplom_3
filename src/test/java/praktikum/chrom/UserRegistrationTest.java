@@ -21,6 +21,7 @@ public class UserRegistrationTest {
     MainPage mainPage = page(MainPage.class);
     LoginPage loginPage = page(LoginPage.class);
     RegisterPage registerPage = page(RegisterPage.class);
+    User validUserData;
     RandomGenerator random = new RandomGenerator();
 
     @Before
@@ -32,9 +33,13 @@ public class UserRegistrationTest {
 
     @After
     public void tearDown() {
+        if (validUserData != null) {
+            validUserData.deleteUserUsingAPI();
+        }
         WebDriverRunner.clearBrowserCache();
         WebDriverRunner.closeWebDriver();
     }
+
 
     @Test
     @DisplayName("Успешная регистрация пользователя")
