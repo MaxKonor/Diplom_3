@@ -33,16 +33,13 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = "//img[@alt='Краторная булка N-200i']")
     private SelenideElement cardboardBunImage;
 
-    @FindBy(how = How.XPATH, using =
-            "//*[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span[text()='Булки']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Булки']")
     private SelenideElement selectedBunSection;
 
-    @FindBy(how = How.XPATH, using =
-            "//*[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span[text()='Соусы']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Соусы']")
     private SelenideElement selectedSaucesSection;
 
-    @FindBy(how = How.XPATH, using =
-            "//*[contains(@class, 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect')]/span[text()='Начинки']")
+    @FindBy(how = How.XPATH, using = "//span[text()='Начинки']")
     private SelenideElement selectedIngredientsSection;
 
 
