@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import praktikum.config.AppConfig;
 import praktikum.pages.*;
-import praktikum.userData.RandomGenerator;
-import praktikum.userData.User;
+import praktikum.user_data.RandomGenerator;
+import praktikum.user_data.User;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;

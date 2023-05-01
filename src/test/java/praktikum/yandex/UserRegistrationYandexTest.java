@@ -10,8 +10,8 @@ import praktikum.config.AppConfig;
 import praktikum.pages.LoginPage;
 import praktikum.pages.MainPage;
 import praktikum.pages.RegisterPage;
-import praktikum.userData.RandomGenerator;
-import praktikum.userData.User;
+import praktikum.user_data.RandomGenerator;
+import praktikum.user_data.User;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;

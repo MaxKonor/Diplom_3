@@ -1,4 +1,4 @@
-package praktikum.userData;
+package praktikum.user_data;
 
 public class Credentials {
     public String userName;

@@ -1,4 +1,4 @@
-package praktikum.userData;
+package praktikum.user_data;
 
 import io.qameta.allure.Step;
 import praktikum.pages.LoginPage;
