@@ -8,13 +8,13 @@ import org.openqa.selenium.support.How;
 
 public class RegisterPage {
 
-    @FindBy(how = How.XPATH, using = "//fieldset[1]/div/div/input")
+    @FindBy(how = How.XPATH, using = "//label[text()='Имя']/following::input")
     private SelenideElement userNameField;
 
-    @FindBy(how = How.XPATH, using = "//fieldset[2]/div/div/input")
+    @FindBy(how = How.XPATH, using = "//label[text()='Email']/following::input")
     private SelenideElement userEmailField;
 
-    @FindBy(how = How.XPATH, using = "//fieldset[3]/div/div/input")
+    @FindBy(how = How.XPATH, using = "//label[text()='Пароль']/following::input")
     private SelenideElement userPasswordField;
 
     @FindBy(how = How.XPATH, using = ".//button[text()='Зарегистрироваться']")
