@@ -1,4 +1,4 @@
-package praktikum.chrom;
+package praktikum;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.junit4.DisplayName;
@@ -12,7 +12,7 @@ import praktikum.pages.MainPage;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class BurgerConstructorTest {
+public class BurgerConstructorTest extends BaseYandexTest{
 
     MainPage mainPage = page(MainPage.class);
 

@@ -1,4 +1,4 @@
-package praktikum.chrom;
+package praktikum;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.junit4.DisplayName;
@@ -16,7 +16,7 @@ import praktikum.user_data.User;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class UserRegistrationTest {
+public class UserRegistrationTest extends BaseYandexTest {
 
     MainPage mainPage = page(MainPage.class);
     LoginPage loginPage = page(LoginPage.class);

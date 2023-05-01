@@ -1,4 +1,4 @@
-package praktikum.yandex;
+package praktikum;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.Before;
