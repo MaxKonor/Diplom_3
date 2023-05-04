@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import praktikum.config.AppConfig;
+import praktikum.extentions.WebDriverFactory;
 import praktikum.pages.LoginPage;
 import praktikum.pages.MainPage;
 import praktikum.pages.RegisterPage;
@@ -16,7 +17,7 @@ import praktikum.user_data.User;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class UserRegistrationTest extends BaseYandexTest {
+public class UserRegistrationTest{
 
     MainPage mainPage = page(MainPage.class);
     LoginPage loginPage = page(LoginPage.class);
@@ -26,6 +27,7 @@ public class UserRegistrationTest extends BaseYandexTest {
 
     @Before
     public void setUp() {
+        WebDriverFactory.initWebDriver();
         open(AppConfig.URL_MAIN);
         mainPage.clickToLoginButton();
         loginPage.clickToRegisterPageLink();

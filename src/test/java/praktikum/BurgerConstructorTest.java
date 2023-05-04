@@ -7,17 +7,19 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import praktikum.config.AppConfig;
+import praktikum.extentions.WebDriverFactory;
 import praktikum.pages.MainPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class BurgerConstructorTest extends BaseYandexTest{
+public class BurgerConstructorTest{
 
     MainPage mainPage = page(MainPage.class);
 
     @Before
     public void setUp()  {
+        WebDriverFactory.initWebDriver();
         open(AppConfig.URL_MAIN);
     }
 

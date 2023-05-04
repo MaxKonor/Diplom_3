@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import praktikum.config.AppConfig;
+import praktikum.extentions.WebDriverFactory;
 import praktikum.pages.*;
 import praktikum.user_data.RandomGenerator;
 import praktikum.user_data.User;
@@ -14,7 +15,7 @@ import praktikum.user_data.User;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class UserLogInTest extends BaseYandexTest{
+public class UserLogInTest{
 
     HeaderPage header = page(HeaderPage.class);
     MainPage mainPage = page(MainPage.class);
@@ -28,6 +29,7 @@ public class UserLogInTest extends BaseYandexTest{
 
     @Before
     public void setUp() {
+        WebDriverFactory.initWebDriver();
         open(AppConfig.URL_REGISTER);
         user.RegistrationUser();
     }

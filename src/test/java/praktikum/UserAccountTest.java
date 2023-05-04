@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import praktikum.config.AppConfig;
+import praktikum.extentions.WebDriverFactory;
 import praktikum.pages.HeaderPage;
 import praktikum.pages.LoginPage;
 import praktikum.pages.UserAccount;
@@ -16,7 +17,7 @@ import praktikum.user_data.User;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class UserAccountTest extends BaseYandexTest{
+public class UserAccountTest{
 
     UserAccount userAccount = page(UserAccount.class);
     LoginPage loginPage = page(LoginPage.class);
@@ -26,7 +27,8 @@ public class UserAccountTest extends BaseYandexTest{
     User user = new User(random.String(), random.Email(), random.String());
 
     @Before
-    public void setUp() throws InterruptedException {
+    public void setUp()  {
+        WebDriverFactory.initWebDriver();
         open(AppConfig.URL_REGISTER);
         user.RegistrationUser();
         open(AppConfig.URL_LOGIN);
